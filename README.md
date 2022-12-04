@@ -11,6 +11,9 @@ $ git clone https://github.com/tarou1226/words-maker.git
 - rustc: 1.64.0
 - cargo: 1.64.0
 
+### Flow chart
+<img alt=Flowchart src="uml/flowchart.drawio.png">
+
 ### Usage
 create file
 ```bash
