@@ -1,4 +1,5 @@
 use std::io::{ stdin, stdout, Write };
+// use std::fs::File;
 
 fn main() {
     loop {
@@ -33,5 +34,14 @@ fn add_contents() {
 }
 
 fn create_file() {
-    println!("create")
+    //println!("create");
+    let mut buf = String::new();
+    print!("Input new file name → ");
+    stdout().flush().unwrap();
+    stdin().read_line(&mut buf).unwrap();
+
+    let file_name = String::from("./words/") 
+                            + buf.trim() 
+                            + &String::from(".txt");
+    println!("{}", file_name);
 }
