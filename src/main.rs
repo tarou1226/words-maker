@@ -18,7 +18,16 @@ fn main() {
 }
 
 fn help() {
-    println!("help")
+    println!("help");
+    let helper = "
+Usage:
+    create      make file
+    add         add contents
+    delete      delete file
+    finished    finished this app
+    ";
+
+    println!("{}", helper)
 }
 
 fn finished() {
