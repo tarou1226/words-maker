@@ -1,5 +1,6 @@
 use std::io::{ stdin, stdout, Write };
 use std::fs::{File, self};
+use std::process;
 
 fn main() {
     loop {
@@ -31,11 +32,15 @@ Usage:
 }
 
 fn finished() {
-    println!("finished")
+    // println!("finished");
+    println!("Thank you for using.");
+    println!("Have a nice day!!!");
+    // 終了処理を行う
+    process::exit(0);
 }
 
 fn delete_file() {
-    println!("delete");
+    // println!("delete");
     let mut buf = String::new();
     print!("Input deletive file name → ");
     stdout().flush().unwrap();
@@ -53,7 +58,7 @@ fn add_contents() {
 }
 
 fn create_file() {
-    println!("create");
+    // println!("create");
     let mut buf = String::new();
     print!("Input new file name → ");
     stdout().flush().unwrap();
