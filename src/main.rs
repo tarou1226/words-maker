@@ -35,7 +35,17 @@ fn finished() {
 }
 
 fn delete_file() {
-    println!("delete")
+    println!("delete");
+    let mut buf = String::new();
+    print!("Input deletive file name → ");
+    stdout().flush().unwrap();
+    stdin().read_line(&mut buf).unwrap();
+
+    let file_name = String::from("./words/") 
+                            + buf.trim() 
+                            + &String::from(".txt");
+    // ファイルがなかったらpanic発生 後々エラー処理を作成する
+    std::fs::remove_file(file_name).unwrap();
 }
 
 fn add_contents() {
@@ -49,11 +59,13 @@ fn create_file() {
     stdout().flush().unwrap();
     stdin().read_line(&mut buf).unwrap();
 
+    // ↓ wordsディレクトリがない場合は作成するコードを書く
+
     let file_name = String::from("./words/") 
                             + buf.trim() 
                             + &String::from(".txt");
     //println!("{}", file_name);
-    // もしもファイルがあったらパニックを起こす
+    // もしもファイルがあったらpanicを起こす 後々エラー処理を作成する
     if fs::metadata(&file_name).is_ok() {
         panic!();
     }
